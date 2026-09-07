@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+<div class="wrapper">
+    <h1>Asabeneh Yetayeh challenges in 2020</h1>
+    <h2>30DaysOfJavaScript Challenge</h2>
+
+    <ul>
+        <li>Python Challenge Done</li>
+        <li>JavaScript Challenge Ongoing</li>
+        <li>React Challenge Coming</li>
+        <li>FullStack Challenge Coming</li>
+        <li>DataAnalysis Challenge Coming</li>
+        <li>ReactNative Challenge Coming</li>
+        <li>MachineLearning Challenge Coming</li>
+    </ul>
+</div>
+
+<script>
+var h1 = document.querySelector("h1");
+var h2 = document.querySelector("h2");
+var list = document.querySelectorAll("li");
+
+// Style using JavaScript
+document.querySelector(".wrapper").style.textAlign = "center";
+
+h1.style.fontFamily = "Arial";
+h2.style.fontFamily = "Arial";
+
+for (var i = 0; i < list.length; i++) {
+    list[i].style.padding = "10px";
+    list[i].style.margin = "2px";
+    list[i].style.listStyle = "none";
+
+    // c, d, e. Set background according to challenge status
+    if (list[i].innerText.includes("Done")) {
+        list[i].style.backgroundColor = "green";
+    }
+    else if (list[i].innerText.includes("Ongoing")) {
+        list[i].style.backgroundColor = "yellow";
+    }
+    else if (list[i].innerText.includes("Coming")) {
+        list[i].style.backgroundColor = "red";
+    }
+}
+
+// a. Change year color every 1 second
+setInterval(function() {
+    var colors = ["red", "blue", "green", "orange", "purple"];
+    h1.style.color = colors[Math.floor(Math.random() * colors.length)];
+}, 1000);
+
+// b. Create date and time and change its background every 1 second
+var dateTime = document.createElement("p");
+document.querySelector(".wrapper").appendChild(dateTime);
+
+setInterval(function() {
+    var now = new Date();
+
+    dateTime.innerText = now.toLocaleString();
+
+    var colors = ["lightblue", "lightgreen", "pink", "orange", "lavender"];
+    dateTime.style.backgroundColor =
+        colors[Math.floor(Math.random() * colors.length)];
+
+}, 1000);
+</script>
+
+</body>
+</html>
+

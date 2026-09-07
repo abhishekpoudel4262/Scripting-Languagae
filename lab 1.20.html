@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+<h3>Time Difference in Days</h3>
+
+<input type="date" id="dt1">
+<input type="date" id="dt2">
+
+<button onclick="getDiff()">Get Difference</button>
+
+<div id="result"></div>
+
+<script>
+function getDiff() {
+    var dt1 = new Date(document.getElementById("dt1").value);
+    var dt2 = new Date(document.getElementById("dt2").value);
+
+    var diffMs = Math.abs(dt2 - dt1);
+    var diffDays = diffMs / (1000 * 60 * 60 * 24);
+
+    document.getElementById("result").innerText =
+        "Time Difference: " + diffDays + " days";
+}
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Find Largest Number</h2>
+
+<label>Enter n:</label>
+<input type="number" id="n">
+<br><br>
+
+<label>Enter integers:</label>
+<input type="text" id="numbers" placeholder="Example: 10,20,30">
+<br><br>
+
+<button onclick="findLargest()">Find Largest</button>
+
+<h3 id="result"></h3>
+
+<script>
+function findLargest() {
+    let n = parseInt(document.getElementById("n").value);
+    let arr = document.getElementById("numbers").value.split(",").map(Number);
+
+    if (arr.length != n) {
+        document.getElementById("result").innerHTML = "Enter exactly " + n + " numbers";
+        return;
+    }
+
+    let largest = arr[0];
+
+    for (let i = 1; i < arr.length; i++) {
+        if (arr[i] > largest)
+            largest = arr[i];
+    }
+
+    document.getElementById("result").innerHTML =
+        "Largest number: " + largest;
+}
+</script>
+
+</body>
+</html>

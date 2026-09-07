@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="container"></div>
+
+<script>
+var container = document.getElementById("container");
+
+for (var i = 0; i <= 100; i++) {
+
+    var number = document.createElement("span");
+    number.innerText = i;
+
+    number.style.display = "inline-block";
+    number.style.padding = "15px";
+    number.style.margin = "3px";
+
+    var prime = true;
+
+    if (i < 2) {
+        prime = false;
+    }
+
+    for (var j = 2; j < i; j++) {
+        if (i % j === 0) {
+            prime = false;
+            break;
+        }
+    }
+
+    if (prime) {
+        number.style.backgroundColor = "red";
+    }
+    else if (i % 2 === 0) {
+        number.style.backgroundColor = "green";
+    }
+    else {
+        number.style.backgroundColor = "yellow";
+    }
+
+    container.appendChild(number);
+}
+</script>
+
+</body>
+</html>

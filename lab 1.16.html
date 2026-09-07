@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h3>Even or Odd</h3>
+
+<div id="result"></div>
+
+<script>
+var output = "";
+
+for (var i = 0; i <= 15; i++) {
+    if (i % 2 === 0)
+        output += i + " is even<br>";
+    else
+        output += i + " is odd<br>";
+}
+
+document.getElementById("result").innerHTML = output;
+</script>
+
+</body>
+</html>
+
